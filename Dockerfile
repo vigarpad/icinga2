@@ -1,9 +1,9 @@
-# Dockerfile for icinga2 with icingaweb2
-# https://github.com/jjethwa/icinga2
+# Dockerfile for icinga2 with icingaweb2 and PostgreSQL on Raspbian 
+# This is a fork from https://github.com/jjethwa/icinga2
 
-FROM debian:jessie
+FROM resin/rpi-raspbian:jessie
 
-MAINTAINER Jordan Jethwa
+MAINTAINER Andras Arpad Vig
 
 ENV APACHE2_HTTP=REDIRECT \
     DEBIAN_FRONTEND=noninteractive \
