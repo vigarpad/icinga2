@@ -4,11 +4,7 @@ UNDER CONSTRUCTION!!!!
 
 This repository contains the source for the [icinga2](https://www.icinga.org/icinga2/) [docker](https://www.docker.com) image.
 
-#The dockerhub-repository is located at [https://hub.docker.com/r/jordan/icinga2/](https://hub.docker.com/r/jordan/icinga2/).
-
-#This build is automated by push for the git-repo. Just crawl it via:
-
-#    docker pull jordan/icinga2
+The dockerhub-repository is located at [https://hub.docker.com/r/vigarpad/rpi-icinga2-mysql/](https://hub.docker.com/r/vigarpad/rpi-icinga2-mysql/).
 
 ## Image details
 
@@ -32,7 +28,7 @@ This repository contains the source for the [icinga2](https://www.icinga.org/ici
 
 Start a new container and bind to host's port 80
 
-    docker run -p 80:80 -t jordan/icinga2:latest
+    docker run -p 80:80 -t vigarpad/rpi-icinga2-mysql:latest
 
 ## Icinga Web 2
 
@@ -44,7 +40,7 @@ If you want to save your php-sessions over multiple boots, mount `/var/lib/php5/
 
 example:
 ```
-docker run [...] -v $PWD/icingaweb2-sessions:/var/lib/php5/sessions/ jordan/icinga2
+docker run [...] -v $PWD/icingaweb2-sessions:/var/lib/php5/sessions/ vigarpad/rpi-icinga2-mysql
 ```
 
 ## Graphite
@@ -59,7 +55,7 @@ docker run -t \
   -e ICINGA2_FEATURE_GRAPHITE=true \
   -e ICINGA2_FEATURE_GRAPHITE_HOST=graphite \
   -e ICINGA2_FEATURE_GRAPHITE_PORT=2003 \
-  jordan/icinga2:latest
+  vigarpad/rpi-icinga2-mysql:latest
 ```
 
 ## Icinga Director
