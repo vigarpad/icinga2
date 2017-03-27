@@ -40,7 +40,7 @@ RUN apt-get -qq update \
           sudo \
           supervisor \
           unzip \
-          wget \ű
+          wget \
           puppet \
      && apt-get clean \
      && rm -rf /var/lib/apt/lists/*
