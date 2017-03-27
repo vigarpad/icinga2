@@ -1,7 +1,7 @@
 version: '2'
 services:
   icinga2:
-    image: jordan/icinga2
+    image: vigarpad/rpi-icinga2-mysql
     restart: on-failure:5
     hostname: icinga2
     environment:
@@ -36,7 +36,7 @@ services:
       #- ./ssmtp/revaliases:/etc/ssmtp/revaliases:ro
       #- ./ssmtp/ssmtp.conf:/etc/ssmtp/ssmtp.conf:ro
   graphite:
-    image: bebehei/graphite:latest
+    image: vigarpad/rpi-graphite:raspbian
     restart: on-failure:5
     hostname: graphite
     volumes:
