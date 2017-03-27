@@ -40,7 +40,8 @@ RUN apt-get -qq update \
           sudo \
           supervisor \
           unzip \
-          wget \
+          wget \ű
+          puppet \
      && apt-get clean \
      && rm -rf /var/lib/apt/lists/*
 
@@ -80,6 +81,8 @@ RUN mkdir -p /usr/local/share/icingaweb2/modules/ \
     && wget -q --no-cookies "https://github.com/aws/aws-sdk-php/releases/download/2.8.30/aws.zip" \
     && unzip -d /usr/local/share/icingaweb2/modules/aws/library/vendor/aws aws.zip \
     && rm aws.zip \
+# Puppet enable
+    && puppet agent --enable \
 # Final fixes
     && sed -i 's/vars\.os.*/vars.os = "Docker"/' /etc/icinga2/conf.d/hosts.conf \
     && mv /etc/icingaweb2/ /etc/icingaweb2.dist \
